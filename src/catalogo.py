@@ -1,8 +1,9 @@
 from abc import ABC
 from datetime import datetime
 from functools import reduce
-
-from numpy import mean
+from typing import List, Dict, Optional
+import string
+from numpy import random, mean, timedelta
 
 """
 Módulo para gestionar un catálogo de elementos musicales.
@@ -242,3 +243,188 @@ class Cancion(ItemMusical):
             str: Representación de la canción.
         """
         return f"Cancion(id={self.identificador}, nombre={self.nombre})"
+
+class Playlist(ItemMusical):
+    """
+    Clase que representa una playlist, heredando de ItemMusical.
+    Añade atributos específicos como nombre y lista de canciones.
+    """
+    def __init__(
+        self,
+        nombre: str,
+        fecha_creacion: datetime,
+        canciones: List[Cancion],
+    ):
+        """
+        Inicializa una Playlist.
+        Raises:
+            ItemMusicalError: Si los parámetros no son válidos.
+        """
+        if not isinstance(canciones, list) or not all(isinstance(cancion, Cancion) for cancion in canciones):
+            raise ItemMusicalError("La playlist debe contener una lista de Cancion.")
+
+        atributos_sonoros = self._calcular_atributos(canciones, "sonoros")
+        atributos_sentimentales = self._calcular_atributos(canciones, "sentimentales")
+        super().__init__(nombre, fecha_creacion, atributos_sonoros, atributos_sentimentales)
+        self.canciones = canciones.copy()
+
+    def _calcular_atributos(
+        self, canciones: List[Cancion], tipo: str
+    ) -> Dict[str, float]:
+        return ItemMusical.promedio_atributos(canciones, tipo)
+
+    def __str__(self) -> str:
+        return f"Playlist(nombre={self.nombre}, canciones={len(self.canciones)})"
+
+class Artista(ItemMusical):
+    """
+    Clase que representa un artista, heredando de ItemMusical.
+    Añade atributos específicos como nombre, fecha de nacimiento, lista de canciones y géneros musicales
+    """
+    def __init__(
+        self,
+        nombre: str,
+        fecha_nacimiento: datetime,
+        canciones: List[Cancion],
+        generos: Optional[List[str]] = None,
+    ):
+       """
+       Inicializa un Artista.
+       Raises:
+              ItemMusicalError: Si los parámetros no son válidos.
+       """ 
+        if not isinstance(canciones, list) or not all(isinstance(cancion, Cancion) for cancion in canciones):
+            raise ItemMusicalError("El artista debe tener una lista de Cancion.")
+        if generos is not None and not all(isinstance(genero, str) for genero in generos):
+            raise ItemMusicalError("Los géneros deben ser una lista de cadenas.")
+
+        atributos_sonoros = self._calcular_atributos(canciones, "sonoros")
+        atributos_sentimentales = self._calcular_atributos(canciones, "sentimentales")
+        super().__init__(nombre, fecha_nacimiento, atributos_sonoros, atributos_sentimentales)
+        self.canciones = canciones.copy()
+        self.generos = generos or []
+
+    def _calcular_atributos(
+        self, canciones: List[Cancion], tipo: str
+    ) -> Dict[str, float]:
+        return ItemMusical.promedio_atributos(canciones, tipo)
+
+    def __str__(self) -> str:
+        return f"Artista(nombre={self.nombre}, canciones={len(self.canciones)})"
+
+class Catalogo:
+    """Catálogo musical.
+
+    El catálogo agrupa canciones, artistas y playlists. Permite validar la colección
+    al construirse, buscar canciones por identificador y generar catálogos aleatorios.
+    """
+
+    def __init__(
+        self,
+        canciones: Optional[List[Cancion]] = None,
+        artistas: Optional[List[Artista]] = None,
+        playlists: Optional[List[Playlist]] = None,
+    ):
+        # Validar que cada lista contenga objetos del tipo correcto
+        if canciones is not None and not all(isinstance(c, Cancion) for c in canciones):
+            raise CatalogoError("Las canciones deben ser instancias de Cancion.")
+        if artistas is not None and not all(isinstance(a, Artista) for a in artistas):
+            raise CatalogoError("Los artistas deben ser instancias de Artista.")
+        if playlists is not None and not all(isinstance(p, Playlist) for p in playlists):
+            raise CatalogoError("Las playlists deben ser instancias de Playlist.")
+
+        self.canciones = canciones or []
+        self.artistas = artistas or []
+        self.playlists = playlists or []
+
+    def buscar_cancion_por_id(self, identificador: str) -> Optional[Cancion]:
+        """Buscar una canción en el catálogo a partir de su identificador."""
+        if not isinstance(identificador, str) or not identificador.strip():
+            raise CatalogoError("El identificador debe ser una cadena no vacía.")
+        return next(
+            filter(lambda c: c.identificador == identificador, self.canciones),
+            None,
+        )
+
+    @staticmethod
+    def _nombre_aleatorio(prefijo: str) -> str:
+        # Genera un nombre aleatorio para un artista o playlist
+        sufijo = "".join(random.choices(string.ascii_uppercase, k=3))
+        return f"{prefijo} {sufijo}"
+
+    @classmethod
+    def generar_catalogo_aleatorio(
+        cls,
+        num_canciones: int = 36,
+        num_artistas: int = 6,
+        num_playlists: int = 5,
+    ) -> "Catalogo":
+        """Genera un catálogo de ejemplo con canciones, artistas y playlists aleatorias."""
+        if not all(
+            isinstance(value, int) and value > 0
+            for value in (num_canciones, num_artistas, num_playlists)
+        ):
+            raise CatalogoError("Los parámetros de generación deben ser enteros positivos.")
+
+        # Los atributos sonoros y sentimentales se definen de forma fija
+        # para construir ejemplos consistentes y comparar resultados.
+        atributos_sonoros = ["ritmo", "tono", "escala"]
+        atributos_sentimentales = ["felicidad", "bailabilidad", "energia"]
+
+        def cancion_random(index: int, artista: str) -> Cancion:
+            # Las canciones se crean con valores aleatorios uniformes en [0, 1]
+            # para que los atributos sean comparables entre items.
+            sonido = {nombre: random.random() for nombre in atributos_sonoros}
+            sentimiento = {nombre: random.random() for nombre in atributos_sentimentales}
+
+            # La fecha de creación se distribuye en los últimos 10 años para
+            # simular un catálogo contemporáneo sin fechas demasiado antiguas.
+            fecha = datetime.now() - timedelta(days=random.randint(1, 3650))
+            return Cancion(
+                identificador=f"c{index:03d}",
+                nombre=f"Cancion {index}",
+                fecha_creacion=fecha,
+                duracion=random.uniform(180, 300),
+                artistas=[artista],
+                atributos_sonoros=sonido,
+                atributos_sentimentales=sentimiento,
+            )
+
+        artistas = []
+        canciones: List[Cancion] = []
+
+        # Crear artistas y asignarles un subconjunto de canciones generado.
+        # Se usa `num_canciones // num_artistas` para distribuir canciones de manera equilibrada.
+        for index in range(num_artistas):
+            nombre_artista = Catalogo._nombre_aleatorio("Artista")
+            canciones_por_artista = list(
+                map(
+                    lambda i: cancion_random(i + 1 + index * 10, nombre_artista),
+                    range(max(1, num_canciones // num_artistas)),
+                )
+            )
+
+            # Cada artista recibe una edad aleatoria entre aproximadamente 22 y 49 años.
+            artista = Artista(
+                nombre=nombre_artista,
+                fecha_nacimiento=datetime.now() - timedelta(days=random.randint(8000, 18000)),
+                canciones=canciones_por_artista,
+                generos=[random.choice(["pop", "rock", "dance", "indie"])],
+            )
+            artistas.append(artista)
+            canciones.extend(canciones_por_artista)
+
+        # Crear playlists seleccionando canciones al azar para simular listas de reproducción variadas.
+        playlists = list(
+            map(
+                lambda _: Playlist(
+                    nombre=Catalogo._nombre_aleatorio("Playlist"),
+                    fecha_creacion=datetime.now() - timedelta(days=random.randint(1, 2000)),
+                    canciones=random.sample(canciones, min(6, len(canciones))),
+                ),
+                range(num_playlists),
+            )
+        )
+
+        # Construir el catálogo final con todos los elementos generados.
+        return cls(canciones=canciones, artistas=artistas, playlists=playlists)
