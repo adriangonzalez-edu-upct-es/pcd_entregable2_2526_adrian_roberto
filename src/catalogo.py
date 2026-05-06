@@ -288,11 +288,11 @@ class Artista(ItemMusical):
         canciones: List[Cancion],
         generos: Optional[List[str]] = None,
     ):
-       """
-       Inicializa un Artista.
-       Raises:
-              ItemMusicalError: Si los parámetros no son válidos.
-       """ 
+        """
+        Inicializa un Artista.
+        Raises:
+                ItemMusicalError: Si los parámetros no son válidos.
+        """
         if not isinstance(canciones, list) or not all(isinstance(cancion, Cancion) for cancion in canciones):
             raise ItemMusicalError("El artista debe tener una lista de Cancion.")
         if generos is not None and not all(isinstance(genero, str) for genero in generos):
