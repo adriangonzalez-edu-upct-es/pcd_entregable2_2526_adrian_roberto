@@ -1,8 +1,8 @@
 from abc import ABC, abstractmethod
 from functools import reduce
-from statistics import mean, pstdev, StatisticsError
+from statistics import mean, stdev, StatisticsError
 
-from catalogo import Cancion
+from src.catalogo import Cancion
 
 
 class EstadisticaError(Exception):
@@ -13,7 +13,7 @@ class EstadisticaError(Exception):
 class ManejadorEstadisticas(ABC):
     """Base para una cadena de responsabilidades de cálculo de estadísticas."""
 
-    def __init__(self, sucesor: "ManejadorEstadisticas" | None = None):
+    def __init__(self, sucesor = None):
         self.sucesor = sucesor
 
     def manejar(self, historial: list[Cancion], estadisticas: dict[str, dict[str, dict[str, float]]]) -> None:
@@ -81,7 +81,7 @@ class CalculadorBase(ManejadorEstadisticas):
     def _desviacion_segura(valores: list[float]) -> float:
         # Devuelve desviación 0 si no hay suficientes datos para calcularla.
         try:
-            return pstdev(valores)
+            return stdev(valores)
         except StatisticsError:
             return 0.0
 

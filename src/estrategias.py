@@ -4,7 +4,7 @@ import random
 from abc import ABC, abstractmethod
 from typing import List
 
-from catalogo import ItemMusical
+from src.catalogo import ItemMusical
 
 
 class EstrategiaError(ValueError):

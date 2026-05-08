@@ -1,9 +1,9 @@
 from abc import ABC
-from datetime import datetime
+from datetime import datetime, timedelta
 from functools import reduce
 from typing import List, Dict, Optional
 import string
-from numpy import random, mean, timedelta
+from numpy import random, mean
 
 """
 Módulo para gestionar un catálogo de elementos musicales.
