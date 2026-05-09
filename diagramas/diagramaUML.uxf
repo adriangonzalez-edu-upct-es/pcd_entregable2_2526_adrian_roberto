@@ -1,15 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<diagram program="umlet" version="15.1">
-  <zoom_level>7</zoom_level>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>427</x>
-      <y>84</y>
-      <w>224</w>
-      <h>133</h>
-    </coordinates>
-    <panel_attributes>SistemaRecomendacionUsuario
+<diagram program="umletino" version="15.1"><zoom_level>11</zoom_level><element><id>UMLClass</id><coordinates><x>616</x><y>44</y><w>352</w><h>209</h></coordinates><panel_attributes>SistemaRecomendacionUsuario
 --
 _-_instancias: dict_
 +id_usuario: str
@@ -19,184 +8,41 @@ _-_instancias: dict_
 +escuchar_cancion(cancion, fecha_hora)
 +obtener_recomendaciones(catalogo)
 +set_estrategia(estrategia)
-+agregar_tipo_recomendacion(tipo)</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>168</x>
-      <y>273</y>
-      <w>182</w>
-      <h>56</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;interface&gt;&gt;
++agregar_tipo_recomendacion(tipo)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>209</x><y>341</y><w>286</w><h>88</h></coordinates><panel_attributes>&lt;&lt;interface&gt;&gt;
 EstrategiaBusqueda
 --
-/+buscar(lista_items, stats_sesion)/</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>35</x>
-      <y>371</y>
-      <w>168</w>
-      <h>42</h>
-    </coordinates>
-    <panel_attributes>BusquedaAlfabetica
+/+buscar(lista_items, stats_sesion)/</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>495</y><w>264</w><h>66</h></coordinates><panel_attributes>BusquedaAlfabetica
 --
-+buscar(lista_items, stats_sesion)</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>294</x>
-      <y>371</y>
-      <w>168</w>
-      <h>42</h>
-    </coordinates>
-    <panel_attributes>BusquedaTemporal
++buscar(lista_items, stats_sesion)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>407</x><y>495</y><w>264</w><h>66</h></coordinates><panel_attributes>BusquedaTemporal
 --
-+buscar(lista_items, stats_sesion)</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>161</x>
-      <y>427</y>
-      <w>168</w>
-      <h>42</h>
-    </coordinates>
-    <panel_attributes>BusquedaAleatoria
++buscar(lista_items, stats_sesion)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>198</x><y>583</y><w>264</w><h>66</h></coordinates><panel_attributes>BusquedaAleatoria
 --
-+buscar(lista_items, stats_sesion)</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>707</x>
-      <y>266</y>
-      <w>168</w>
-      <h>70</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;abstract&gt;&gt;
++buscar(lista_items, stats_sesion)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1056</x><y>330</y><w>264</w><h>110</h></coordinates><panel_attributes>&lt;&lt;abstract&gt;&gt;
 ManejadorEstadisticas
 --
 -sucesor: ManejadorEstadisticas
 --
 +manejar(sesion, stats)
-/+procesar(sesion, stats)/</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>623</x>
-      <y>371</y>
-      <w>154</w>
-      <h>42</h>
-    </coordinates>
-    <panel_attributes>CalculadorSonoro
+/+procesar(sesion, stats)/</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>924</x><y>495</y><w>242</w><h>66</h></coordinates><panel_attributes>CalculadorSonoro
 --
-+procesar(sesion, stats)</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>798</x>
-      <y>371</y>
-      <w>154</w>
-      <h>42</h>
-    </coordinates>
-    <panel_attributes>CalculadorSentimental
++procesar(sesion, stats)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1199</x><y>495</y><w>242</w><h>66</h></coordinates><panel_attributes>CalculadorSentimental
 --
-+procesar(sesion, stats)</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>427</x>
-      <y>462</y>
-      <w>210</w>
-      <h>56</h>
-    </coordinates>
-    <panel_attributes>RecomendadorComponent
++procesar(sesion, stats)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>616</x><y>638</y><w>330</w><h>88</h></coordinates><panel_attributes>RecomendadorComponent
 --
-/+recomendar(catalogo, stats, estrategia)/</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>322</x>
-      <y>560</y>
-      <w>196</w>
-      <h>42</h>
-    </coordinates>
-    <panel_attributes>RecomendadorVacio
+/+recomendar(catalogo, stats, estrategia)/</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>451</x><y>792</y><w>308</w><h>66</h></coordinates><panel_attributes>RecomendadorVacio
 --
-+recomendar()</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>546</x>
-      <y>560</y>
-      <w>231</w>
-      <h>56</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;abstract&gt;&gt;
++recomendar()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>803</x><y>792</y><w>363</w><h>88</h></coordinates><panel_attributes>&lt;&lt;abstract&gt;&gt;
 RecomendadorDecorator
 --
 -componente_envuelto: RecomendadorComponent
 --
-+recomendar(catalogo, stats, estrategia)</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>406</x>
-      <y>658</y>
-      <w>196</w>
-      <h>42</h>
-    </coordinates>
-    <panel_attributes>RecomendadorArtistasDecorator
++recomendar(catalogo, stats, estrategia)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>583</x><y>946</y><w>308</w><h>66</h></coordinates><panel_attributes>RecomendadorArtistasDecorator
 --
 +recomendar(catalogo, stats, estrategia)
--recomendarArtista()</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>728</x>
-      <y>658</y>
-      <w>196</w>
-      <h>42</h>
-    </coordinates>
-    <panel_attributes>RecomendadorPlaylistsDecorator
+-recomendarArtista()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1089</x><y>946</y><w>308</w><h>66</h></coordinates><panel_attributes>RecomendadorPlaylistsDecorator
 --
 +recomendar(catalogo, stats, estrategia)
--recomendarPlaylist()</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>1099</x>
-      <y>168</y>
-      <w>196</w>
-      <h>140</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;abstract&gt;&gt;
+-recomendarPlaylist()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1672</x><y>176</y><w>308</w><h>220</h></coordinates><panel_attributes>&lt;&lt;abstract&gt;&gt;
 ItemMusical
 --
 +nombre
@@ -207,340 +53,33 @@ ItemMusical
 /+obtener_nombre()/
 /+obtener_fecha()/
 /+obtener_atributos_sonoros()/
-/+obtener_atributos_sentimentales()/</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>1043</x>
-      <y>350</y>
-      <w>98</w>
-      <h>56</h>
-    </coordinates>
-    <panel_attributes>Cancion
+/+obtener_atributos_sentimentales()/</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1584</x><y>462</y><w>154</w><h>88</h></coordinates><panel_attributes>Cancion
 --
 +duracion
-+artistas</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>1155</x>
-      <y>350</y>
-      <w>98</w>
-      <h>56</h>
-    </coordinates>
-    <panel_attributes>Playlist
++artistas</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1760</x><y>462</y><w>154</w><h>88</h></coordinates><panel_attributes>Playlist
 --
-+canciones</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>1267</x>
-      <y>350</y>
-      <w>98</w>
-      <h>56</h>
-    </coordinates>
-    <panel_attributes>Artista
++canciones</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1936</x><y>462</y><w>154</w><h>88</h></coordinates><panel_attributes>Artista
 --
-+generos</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>252</x>
-      <y>203</y>
-      <w>189</w>
-      <h>84</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
-m2=posee 1</panel_attributes>
-    <additional_attributes>250.0;10.0;10.0;10.0;10.0;100.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>644</x>
-      <y>203</y>
-      <w>238</w>
-      <h>77</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
-m2=posee 1 (cadena)</panel_attributes>
-    <additional_attributes>10.0;10.0;210.0;10.0;210.0;90.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>525</x>
-      <y>210</y>
-      <w>140</w>
-      <h>266</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
-m2=posee 1 (base o decorado)</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;360.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>112</x>
-      <y>322</y>
-      <w>154</w>
-      <h>63</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>200.0;10.0;200.0;30.0;10.0;30.0;10.0;70.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>245</x>
-      <y>322</y>
-      <w>147</w>
-      <h>63</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;30.0;190.0;30.0;190.0;70.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>245</x>
-      <y>322</y>
-      <w>21</w>
-      <h>119</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;150.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>868</x>
-      <y>273</y>
-      <w>91</w>
-      <h>56</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
-m2=tiene sucesor</panel_attributes>
-    <additional_attributes>10.0;10.0;80.0;10.0;80.0;50.0;10.0;50.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>693</x>
-      <y>329</y>
-      <w>112</w>
-      <h>56</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>140.0;10.0;140.0;40.0;10.0;40.0;10.0;60.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>784</x>
-      <y>329</y>
-      <w>105</w>
-      <h>56</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;40.0;130.0;40.0;130.0;60.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>413</x>
-      <y>511</y>
-      <w>133</w>
-      <h>63</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>170.0;10.0;170.0;30.0;10.0;30.0;10.0;70.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>525</x>
-      <y>511</y>
-      <w>140</w>
-      <h>63</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;30.0;180.0;30.0;180.0;70.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>630</x>
-      <y>476</y>
-      <w>112</w>
-      <h>98</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
-</panel_attributes>
-    <additional_attributes>140.0;120.0;140.0;20.0;10.0;20.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>497</x>
-      <y>609</y>
-      <w>175</w>
-      <h>63</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>230.0;10.0;230.0;40.0;10.0;40.0;10.0;70.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>651</x>
-      <y>609</y>
-      <w>189</w>
-      <h>63</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;40.0;250.0;40.0;250.0;70.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>1078</x>
-      <y>301</y>
-      <w>140</w>
-      <h>63</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>180.0;10.0;180.0;30.0;10.0;30.0;10.0;70.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>1197</x>
-      <y>301</y>
-      <w>21</w>
-      <h>63</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>1197</x>
-      <y>301</y>
-      <w>133</w>
-      <h>63</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;30.0;170.0;30.0;170.0;70.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>1106</x>
-      <y>399</y>
-      <w>105</w>
-      <h>49</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
++generos</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>341</x><y>231</y><w>297</w><h>132</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m1=1
+m2=1</panel_attributes><additional_attributes>250;10;10;10;10;100</additional_attributes></element><element><id>Relation</id><coordinates><x>957</x><y>231</y><w>264</w><h>121</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m1=1
+m2=1</panel_attributes><additional_attributes>10;10;210;10;210;90</additional_attributes></element><element><id>Relation</id><coordinates><x>770</x><y>242</y><w>44</w><h>418</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m1=1
+m2=1</panel_attributes><additional_attributes>10;10;10;360</additional_attributes></element><element><id>Relation</id><coordinates><x>121</x><y>418</y><w>242</w><h>99</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>200;10;200;30;10;30;10;70</additional_attributes></element><element><id>Relation</id><coordinates><x>330</x><y>418</y><w>231</w><h>99</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;30;190;30;190;70</additional_attributes></element><element><id>Relation</id><coordinates><x>330</x><y>418</y><w>33</w><h>187</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;150</additional_attributes></element><element><id>Relation</id><coordinates><x>1309</x><y>341</y><w>110</w><h>88</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=1
+m2=1</panel_attributes><additional_attributes>10;10;80;10;80;50;10;50</additional_attributes></element><element><id>Relation</id><coordinates><x>1034</x><y>429</y><w>176</w><h>88</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>140;10;140;40;10;40;10;60</additional_attributes></element><element><id>Relation</id><coordinates><x>1177</x><y>429</y><w>165</w><h>88</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;40;130;40;130;60</additional_attributes></element><element><id>Relation</id><coordinates><x>594</x><y>715</y><w>209</w><h>99</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>170;10;170;30;10;30;10;70</additional_attributes></element><element><id>Relation</id><coordinates><x>770</x><y>715</y><w>220</w><h>99</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;30;180;30;180;70</additional_attributes></element><element><id>Relation</id><coordinates><x>935</x><y>660</y><w>176</w><h>154</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
+</panel_attributes><additional_attributes>140;120;140;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>726</x><y>869</y><w>275</w><h>99</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>230;10;230;40;10;40;10;70</additional_attributes></element><element><id>Relation</id><coordinates><x>968</x><y>869</y><w>297</w><h>99</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;40;250;40;250;70</additional_attributes></element><element><id>Relation</id><coordinates><x>1639</x><y>385</y><w>220</w><h>99</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>180;10;180;30;10;30;10;70</additional_attributes></element><element><id>Relation</id><coordinates><x>1826</x><y>385</y><w>33</w><h>99</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;70</additional_attributes></element><element><id>Relation</id><coordinates><x>1826</x><y>385</y><w>209</w><h>99</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;30;170;30;170;70</additional_attributes></element><element><id>Relation</id><coordinates><x>1683</x><y>539</y><w>165</w><h>77</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
 m1=0..*
-m2=0..*</panel_attributes>
-    <additional_attributes>110.0;10.0;110.0;50.0;10.0;50.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>1064</x>
-      <y>399</y>
-      <w>287</w>
-      <h>84</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m2=0..*</panel_attributes><additional_attributes>110;10;110;50;10;50;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1617</x><y>539</y><w>451</w><h>132</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 m1=0..*
 m2=1..*
-</panel_attributes>
-    <additional_attributes>370.0;10.0;370.0;100.0;10.0;100.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Text</id>
-    <coordinates>
-      <x>196</x>
-      <y>231</y>
-      <w>70</w>
-      <h>49</h>
-    </coordinates>
-    <panel_attributes>strategy
-style=wordwrap</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Text</id>
-    <coordinates>
-      <x>882</x>
-      <y>231</y>
-      <w>126</w>
-      <h>49</h>
-    </coordinates>
-    <panel_attributes>chain of responsability
+</panel_attributes><additional_attributes>370;10;370;100;10;100;10;10</additional_attributes></element><element><id>Text</id><coordinates><x>253</x><y>275</y><w>110</w><h>77</h></coordinates><panel_attributes>strategy
+style=wordwrap</panel_attributes><additional_attributes></additional_attributes></element><element><id>Text</id><coordinates><x>1331</x><y>275</y><w>198</w><h>77</h></coordinates><panel_attributes>chain of responsability
 
-style=wordwrap</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Text</id>
-    <coordinates>
-      <x>777</x>
-      <y>560</y>
-      <w>70</w>
-      <h>49</h>
-    </coordinates>
-    <panel_attributes>decorator
-style=wordwrap</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Text</id>
-    <coordinates>
-      <x>497</x>
-      <y>56</y>
-      <w>70</w>
-      <h>49</h>
-    </coordinates>
-    <panel_attributes>singelton
-style=wordwrap</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>574</x>
-      <y>728</y>
-      <w>196</w>
-      <h>42</h>
-    </coordinates>
-    <panel_attributes>RecomendadorCancionDecorator
+style=wordwrap</panel_attributes><additional_attributes></additional_attributes></element><element><id>Text</id><coordinates><x>1166</x><y>792</y><w>110</w><h>77</h></coordinates><panel_attributes>decorator
+style=wordwrap</panel_attributes><additional_attributes></additional_attributes></element><element><id>Text</id><coordinates><x>726</x><y>0</y><w>110</w><h>77</h></coordinates><panel_attributes>singelton
+style=wordwrap</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>847</x><y>1056</y><w>308</w><h>66</h></coordinates><panel_attributes>RecomendadorCancionDecorator
 --
 +recomendar(catalogo, stats, estrategia)
--recomendarCancion()</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>651</x>
-      <y>609</y>
-      <w>21</w>
-      <h>133</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;170.0</additional_attributes>
-  </element>
-</diagram>
+-recomendarCancion()</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>968</x><y>869</y><w>33</w><h>209</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;170</additional_attributes></element></diagram>
