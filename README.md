@@ -36,11 +36,6 @@ Imagina que es como Spotify, pero más simple y enfocado en aprender patrones de
    ```
    cd ruta/al/proyecto/pcd_entregable2_2526_adrian_roberto
    ```
-3. Si hay un archivo `requirements.txt`, instala las dependencias:
-   ```
-   pip install -r requirements.txt
-   ```
-   (Si no hay, no necesitas hacer nada más porque usa librerías estándar de Python).
 
 ### Ejecutar el programa:
 ```
