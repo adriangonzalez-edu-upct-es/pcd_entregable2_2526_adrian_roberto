@@ -67,7 +67,7 @@ class CalculadorBase(ManejadorEstadisticas):
         return medias, desviaciones
 
     def _agregar_atributos(self, acumulador: dict[str, list[float]], cancion: Cancion, tipo: str) -> dict[str, list[float]]:
-        # Selecciona atributos según el tipo y los acumula para el cálculo.
+        # Agrega los valores de los atributos de una canción al acumulador, agrupándolos por nombre.
         atributos = (
             cancion.obtener_atributos_sonoros()
             if tipo == "sonoros"
