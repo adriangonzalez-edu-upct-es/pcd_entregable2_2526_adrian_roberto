@@ -1,4 +1,4 @@
-<diagram program="umletino" version="15.1"><zoom_level>5</zoom_level><element><id>UMLClass</id><coordinates><x>298</x><y>60</y><w>160</w><h>155</h></coordinates><panel_attributes>SistemaRecomendacionUsuario
+<diagram program="umletino" version="15.1"><zoom_level>5</zoom_level><element><id>UMLClass</id><coordinates><x>315</x><y>90</y><w>160</w><h>155</h></coordinates><panel_attributes>SistemaRecomendacionUsuario
 --
 _-_instancias: dict_
 +id_usuario: str
@@ -18,41 +18,41 @@ _-_instancias: dict_
 +set_estrategia(estrategia)
 +agregar_tipo_recomendacion(tipo)
 +remover_tipo_recomendacion(tipo)
-#constrir_recomendador()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>113</x><y>195</y><w>130</w><h>40</h></coordinates><panel_attributes>&lt;&lt;interface&gt;&gt;
+#constrir_recomendador()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>130</x><y>225</y><w>130</w><h>40</h></coordinates><panel_attributes>&lt;&lt;interface&gt;&gt;
 EstrategiaBusqueda
 --
 +buscar(lista_items, estadisticas)
-#validar_entrada(lista_items, estadisticas)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>18</x><y>265</y><w>120</w><h>30</h></coordinates><panel_attributes>BusquedaAlfabetica
+#validar_entrada(lista_items, estadisticas)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>35</x><y>295</y><w>120</w><h>30</h></coordinates><panel_attributes>BusquedaAlfabetica
 --
-+buscar(lista_items, estadisticas)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>203</x><y>265</y><w>120</w><h>30</h></coordinates><panel_attributes>BusquedaTemporal
++buscar(lista_items, estadisticas)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>220</x><y>295</y><w>120</w><h>30</h></coordinates><panel_attributes>BusquedaTemporal
 --
-+buscar(lista_items, estadisticas)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>108</x><y>305</y><w>120</w><h>30</h></coordinates><panel_attributes>BusquedaAleatoria
++buscar(lista_items, estadisticas)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>125</x><y>335</y><w>120</w><h>30</h></coordinates><panel_attributes>BusquedaAleatoria
 --
-+buscar(lista_items, estadisticas)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>498</x><y>190</y><w>120</w><h>60</h></coordinates><panel_attributes>&lt;&lt;abstract&gt;&gt;
++buscar(lista_items, estadisticas)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>515</x><y>220</y><w>120</w><h>60</h></coordinates><panel_attributes>&lt;&lt;abstract&gt;&gt;
 ManejadorEstadisticas
 --
 -sucesor: ManejadorEstadisticas
 --
 +__init__(sucesor=None)
 +manejar(historial, estadisticas)
-/+procesar(historial, estadisticas)/</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>438</x><y>380</y><w>110</w><h>30</h></coordinates><panel_attributes>CalculadorSonoro
+/+procesar(historial, estadisticas)/</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>455</x><y>410</y><w>110</w><h>30</h></coordinates><panel_attributes>CalculadorSonoro
 --
-+procesar(historial, stats)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>563</x><y>380</y><w>110</w><h>30</h></coordinates><panel_attributes>CalculadorSentimental
++procesar(historial, stats)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>580</x><y>410</y><w>110</w><h>30</h></coordinates><panel_attributes>CalculadorSentimental
 --
-+procesar(hhistorial, stats)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>298</x><y>440</y><w>150</w><h>40</h></coordinates><panel_attributes>RecomendadorComponent
++procesar(hhistorial, stats)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>315</x><y>470</y><w>150</w><h>40</h></coordinates><panel_attributes>RecomendadorComponent
 --
-/+recomendar(catalogo, stats, estrategia)/</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>223</x><y>510</y><w>140</w><h>30</h></coordinates><panel_attributes>RecomendadorVacio
+/+recomendar(catalogo, stats, estrategia)/</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>240</x><y>540</y><w>140</w><h>30</h></coordinates><panel_attributes>RecomendadorVacio
 --
-+recomendar(catalogo, estadisticas, estrategia)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>383</x><y>510</y><w>165</w><h>40</h></coordinates><panel_attributes>&lt;&lt;abstract&gt;&gt;
++recomendar(catalogo, estadisticas, estrategia)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>400</x><y>540</y><w>165</w><h>40</h></coordinates><panel_attributes>&lt;&lt;abstract&gt;&gt;
 RecomendadorDecorator
 --
 -componente_envuelto: RecomendadorComponent
 --
-+recomendar(catalogo, stats, estrategia)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>283</x><y>580</y><w>140</w><h>30</h></coordinates><panel_attributes>RecomendadorArtistasDecorator
++recomendar(catalogo, stats, estrategia)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>300</x><y>610</y><w>140</w><h>30</h></coordinates><panel_attributes>RecomendadorArtistasDecorator
 --
-+recomendar(catalogo, estadisticas, estrategia)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>513</x><y>580</y><w>140</w><h>30</h></coordinates><panel_attributes>RecomendadorPlaylistsDecorator
++recomendar(catalogo, estadisticas, estrategia)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>530</x><y>610</y><w>140</w><h>30</h></coordinates><panel_attributes>RecomendadorPlaylistsDecorator
 --
-+recomendar(catalogo, estadisticas, estrategia)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>778</x><y>120</y><w>165</w><h>125</h></coordinates><panel_attributes>&lt;&lt;abstract&gt;&gt;
++recomendar(catalogo, estadisticas, estrategia)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>795</x><y>150</y><w>165</w><h>125</h></coordinates><panel_attributes>&lt;&lt;abstract&gt;&gt;
 ItemMusical
 --
 +nombre: str
@@ -66,48 +66,48 @@ ItemMusical
 /+obtener_atributos_sentimentales()/
 +distancia_al_sesion(estadisticas)
 +coincide_con_estadisticas(estadisticas, umbral=0.18)
-+promedio_atributos(canciones, tipo)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>703</x><y>275</y><w>70</w><h>50</h></coordinates><panel_attributes>Cancion
++promedio_atributos(canciones, tipo)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>720</x><y>305</y><w>70</w><h>50</h></coordinates><panel_attributes>Cancion
 --
 +identificador: str
 +duracion: float
 +artistas: list[str]
 --
-+__str__()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>778</x><y>275</y><w>105</w><h>40</h></coordinates><panel_attributes>Playlist
++__str__()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>795</x><y>305</y><w>105</w><h>40</h></coordinates><panel_attributes>Playlist
 --
 +canciones
 --
-#calcular_atributos(canciones, tipo)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>898</x><y>275</y><w>105</w><h>40</h></coordinates><panel_attributes>Artista
+#calcular_atributos(canciones, tipo)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>915</x><y>305</y><w>105</w><h>40</h></coordinates><panel_attributes>Artista
 --
 +generos
 +canciones
 --
-#calcular_atributos(canciones, tipo)</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>173</x><y>145</y><w>135</w><h>60</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+#calcular_atributos(canciones, tipo)</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>190</x><y>175</y><w>135</w><h>60</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 m1=1
-m2=1</panel_attributes><additional_attributes>250;10;10;10;10;100</additional_attributes></element><element><id>Relation</id><coordinates><x>453</x><y>145</y><w>120</w><h>55</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m2=1</panel_attributes><additional_attributes>250;10;10;10;10;100</additional_attributes></element><element><id>Relation</id><coordinates><x>470</x><y>175</y><w>120</w><h>55</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 m1=1
-m2=1</panel_attributes><additional_attributes>10;10;210;10;210;90</additional_attributes></element><element><id>Relation</id><coordinates><x>368</x><y>210</y><w>20</w><h>240</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m2=1</panel_attributes><additional_attributes>10;10;210;10;210;90</additional_attributes></element><element><id>Relation</id><coordinates><x>385</x><y>240</y><w>20</w><h>240</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 m1=1
-m2=1</panel_attributes><additional_attributes>10;10;10;460</additional_attributes></element><element><id>Relation</id><coordinates><x>73</x><y>230</y><w>110</w><h>45</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>200;10;200;30;10;30;10;70</additional_attributes></element><element><id>Relation</id><coordinates><x>168</x><y>230</y><w>105</w><h>45</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;30;190;30;190;70</additional_attributes></element><element><id>Relation</id><coordinates><x>168</x><y>230</y><w>15</w><h>85</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;150</additional_attributes></element><element><id>Relation</id><coordinates><x>613</x><y>195</y><w>50</w><h>40</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m2=1</panel_attributes><additional_attributes>10;10;10;460</additional_attributes></element><element><id>Relation</id><coordinates><x>90</x><y>260</y><w>110</w><h>45</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>200;10;200;30;10;30;10;70</additional_attributes></element><element><id>Relation</id><coordinates><x>185</x><y>260</y><w>105</w><h>45</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;30;190;30;190;70</additional_attributes></element><element><id>Relation</id><coordinates><x>185</x><y>260</y><w>15</w><h>85</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;150</additional_attributes></element><element><id>Relation</id><coordinates><x>630</x><y>225</y><w>50</w><h>40</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
 m1=1
-m2=1</panel_attributes><additional_attributes>10;10;80;10;80;50;10;50</additional_attributes></element><element><id>Relation</id><coordinates><x>488</x><y>335</y><w>80</w><h>55</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>140;10;140;40;10;40;10;90</additional_attributes></element><element><id>Relation</id><coordinates><x>553</x><y>335</y><w>75</w><h>55</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;40;130;40;130;90</additional_attributes></element><element><id>Relation</id><coordinates><x>288</x><y>475</y><w>95</w><h>45</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>170;10;170;30;10;30;10;70</additional_attributes></element><element><id>Relation</id><coordinates><x>368</x><y>475</y><w>100</w><h>45</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;30;180;30;180;70</additional_attributes></element><element><id>Relation</id><coordinates><x>443</x><y>450</y><w>80</w><h>70</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
-</panel_attributes><additional_attributes>140;120;140;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>348</x><y>545</y><w>125</w><h>45</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>230;10;230;40;10;40;10;70</additional_attributes></element><element><id>Relation</id><coordinates><x>458</x><y>545</y><w>135</w><h>45</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;40;250;40;250;70</additional_attributes></element><element><id>Relation</id><coordinates><x>728</x><y>240</y><w>95</w><h>45</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>170;10;170;30;10;30;10;70</additional_attributes></element><element><id>Relation</id><coordinates><x>808</x><y>240</y><w>15</w><h>45</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;70</additional_attributes></element><element><id>Relation</id><coordinates><x>808</x><y>240</y><w>135</w><h>45</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;30;250;30;250;70</additional_attributes></element><element><id>Relation</id><coordinates><x>748</x><y>310</y><w>75</w><h>50</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m2=1</panel_attributes><additional_attributes>10;10;80;10;80;50;10;50</additional_attributes></element><element><id>Relation</id><coordinates><x>505</x><y>365</y><w>80</w><h>55</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>140;10;140;40;10;40;10;90</additional_attributes></element><element><id>Relation</id><coordinates><x>570</x><y>365</y><w>75</w><h>55</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;40;130;40;130;90</additional_attributes></element><element><id>Relation</id><coordinates><x>305</x><y>505</y><w>95</w><h>45</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>170;10;170;30;10;30;10;70</additional_attributes></element><element><id>Relation</id><coordinates><x>385</x><y>505</y><w>100</w><h>45</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;30;180;30;180;70</additional_attributes></element><element><id>Relation</id><coordinates><x>460</x><y>480</y><w>80</w><h>70</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
+</panel_attributes><additional_attributes>140;120;140;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>365</x><y>575</y><w>125</w><h>45</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>230;10;230;40;10;40;10;70</additional_attributes></element><element><id>Relation</id><coordinates><x>475</x><y>575</y><w>135</w><h>45</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;40;250;40;250;70</additional_attributes></element><element><id>Relation</id><coordinates><x>745</x><y>270</y><w>95</w><h>45</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>170;10;170;30;10;30;10;70</additional_attributes></element><element><id>Relation</id><coordinates><x>825</x><y>270</y><w>15</w><h>45</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;70</additional_attributes></element><element><id>Relation</id><coordinates><x>825</x><y>270</y><w>135</w><h>45</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;30;250;30;250;70</additional_attributes></element><element><id>Relation</id><coordinates><x>765</x><y>340</y><w>75</w><h>50</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
 m1=0..*
-m2=0..*</panel_attributes><additional_attributes>110;10;110;80;10;80;10;30</additional_attributes></element><element><id>Relation</id><coordinates><x>713</x><y>90</y><w>285</w><h>195</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m2=0..*</panel_attributes><additional_attributes>110;10;110;80;10;80;10;30</additional_attributes></element><element><id>Relation</id><coordinates><x>730</x><y>120</y><w>285</w><h>195</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 m1=0..*
 m2=1..*
-</panel_attributes><additional_attributes>530;370;530;20;10;20;10;370</additional_attributes></element><element><id>Text</id><coordinates><x>133</x><y>165</y><w>50</w><h>35</h></coordinates><panel_attributes>strategy
-style=wordwrap</panel_attributes><additional_attributes></additional_attributes></element><element><id>Text</id><coordinates><x>618</x><y>175</y><w>90</w><h>35</h></coordinates><panel_attributes>chain of responsability
+</panel_attributes><additional_attributes>530;370;530;20;10;20;10;370</additional_attributes></element><element><id>Text</id><coordinates><x>150</x><y>195</y><w>50</w><h>35</h></coordinates><panel_attributes>strategy
+style=wordwrap</panel_attributes><additional_attributes></additional_attributes></element><element><id>Text</id><coordinates><x>635</x><y>205</y><w>90</w><h>35</h></coordinates><panel_attributes>chain of responsability
 
-style=wordwrap</panel_attributes><additional_attributes></additional_attributes></element><element><id>Text</id><coordinates><x>548</x><y>510</y><w>50</w><h>35</h></coordinates><panel_attributes>decorator
-style=wordwrap</panel_attributes><additional_attributes></additional_attributes></element><element><id>Text</id><coordinates><x>348</x><y>40</y><w>50</w><h>35</h></coordinates><panel_attributes>singelton
-style=wordwrap</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>403</x><y>630</y><w>140</w><h>30</h></coordinates><panel_attributes>RecomendadorCancionDecorator
+style=wordwrap</panel_attributes><additional_attributes></additional_attributes></element><element><id>Text</id><coordinates><x>565</x><y>540</y><w>50</w><h>35</h></coordinates><panel_attributes>decorator
+style=wordwrap</panel_attributes><additional_attributes></additional_attributes></element><element><id>Text</id><coordinates><x>365</x><y>70</y><w>50</w><h>35</h></coordinates><panel_attributes>singelton
+style=wordwrap</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>420</x><y>660</y><w>140</w><h>30</h></coordinates><panel_attributes>RecomendadorCancionDecorator
 --
-+recomendar(catalogo, estadisticas, estrategia)</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>458</x><y>545</y><w>15</w><h>95</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;170</additional_attributes></element><element><id>UMLClass</id><coordinates><x>483</x><y>290</y><w>160</w><h>50</h></coordinates><panel_attributes>CalculadorBase
++recomendar(catalogo, estadisticas, estrategia)</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>475</x><y>575</y><w>15</w><h>95</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;170</additional_attributes></element><element><id>UMLClass</id><coordinates><x>500</x><y>320</y><w>160</w><h>50</h></coordinates><panel_attributes>CalculadorBase
 --
 #actualizar_estadisticas(historial, estadisticas, tipo)
 #obtener_media_y_desviacion(historial, tipo)
 #agregar_atributos(acumulador,cancion,tipo)
-#desviacion_segura(valores)</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>553</x><y>245</y><w>15</w><h>55</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;90</additional_attributes></element><element><id>UMLClass</id><coordinates><x>753</x><y>425</y><w>215</w><h>70</h></coordinates><panel_attributes>Catalogo
+#desviacion_segura(valores)</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>570</x><y>275</y><w>15</w><h>55</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;90</additional_attributes></element><element><id>UMLClass</id><coordinates><x>770</x><y>455</y><w>215</w><h>70</h></coordinates><panel_attributes>Catalogo
 --
 +canciones
 +atritas
@@ -116,10 +116,12 @@ style=wordwrap</panel_attributes><additional_attributes></additional_attributes>
 +buscar_cancion_por_id(id)
 +generar_catalogo_aleatorio(num_canciones,num_artistas,num_playlist)
 
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>718</x><y>320</y><w>70</w><h>115</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>735</x><y>350</y><w>70</w><h>115</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 m1=0..*
-m2=1</panel_attributes><additional_attributes>100;210;100;140;10;140;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>833</x><y>310</y><w>25</w><h>125</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m2=1</panel_attributes><additional_attributes>100;210;100;140;10;140;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>850</x><y>340</y><w>25</w><h>125</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 m1=0..*
-m2=1</panel_attributes><additional_attributes>10;230;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>928</x><y>310</y><w>25</w><h>125</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m2=1</panel_attributes><additional_attributes>10;230;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>945</x><y>340</y><w>25</w><h>125</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 m1=0..*
-m2=1</panel_attributes><additional_attributes>10;230;10;10</additional_attributes></element></diagram>
+m2=1</panel_attributes><additional_attributes>10;230;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>465</x><y>130</y><w>315</w><h>385</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m1=1
+m2=1</panel_attributes><additional_attributes>10;10;490;10;490;740;610;740</additional_attributes></element></diagram>
